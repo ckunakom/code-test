@@ -32,7 +32,7 @@ while True:
             if  selected_index in user_input_list:
                 continue
             else:
-                print(f'"{selected_index}" entered')
+                print(f'Confirmed: "{selected_index}" entered')
                 # Append list with flavor
                 user_input_list.append(selected_index)
                 print('>>>>>Input string or press enter to move on<<<<<<<')
@@ -56,19 +56,33 @@ print('*****************************')
 import os
 
 for l in user_input_list:
-    # path_name = l
+    path_name = l.split(' flavor')[0]
 
     # Check to see if path exist
-    is_exist = os.path.exists(l)
+    is_exist = os.path.exists(path_name)
 
     if not is_exist:
         
         # create a new directory
-        os.makedirs(l)
-        print(f'{l} directory created')
+        os.makedirs(path_name)
+        print(f'Confirmed: {path_name} directory created')
+        
+        try:
+            # Created the file here with that path
+            open(f'{path_name}/{l}.txt', 'w')
+            print(f'Confirmed: {l}.txt created and placed in {path_name} directory')
+        except FileNotFoundError:
+            print(f'Confirmed: {path_name} directory is not found')
 
     else:
-        print(f'{l} directory exists.')
+        print(f'Confirmed: {path_name} directory already exists.')
 
-    # Create a file
-    # Move it into the directory 
+        try:
+            # Created the file here with that path
+            open(f'{path_name}/{l}.txt', 'w')
+            print(f'Confirmed: {l}.txt created and placed in {path_name} directory')
+        except FileNotFoundError:
+            print(f'Confirmed: {path_name} directory is not found')
+
+# Hey yo! Give me commit message to paste in git!
+print('')
