@@ -10,12 +10,14 @@ print('***********************')
 # print('flavor: ' + df.iloc[0,1])
 # print(f'index: {df.iloc[3,0]}, flavor: {df.iloc[3,1]}')
 
-# Empty list to append
-user_input_list = []
 
 print(df['flavor'])
 print('***********************')
 
+# Empty list to append
+user_input_list = []
+
+# User make selection
 while True:
     
     try:
@@ -51,5 +53,22 @@ print('*****************************')
 
 
 # Write a file with the same file name as the flavor selected
+import os
 
-# Move it into the directory / create directory w/ same name if doesn't already exist
+for l in user_input_list:
+    # path_name = l
+
+    # Check to see if path exist
+    is_exist = os.path.exists(l)
+
+    if not is_exist:
+        
+        # create a new directory
+        os.makedirs(l)
+        print(f'{l} directory created')
+
+    else:
+        print(f'{l} directory exists.')
+
+    # Create a file
+    # Move it into the directory 
