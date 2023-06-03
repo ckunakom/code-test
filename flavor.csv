@@ -1,6 +1,7 @@
-﻿index,flavor
-1,matcha flavor
-2,cookie flavor
-3,chocolate flavor
-4,vanilla flavor
-5,cherry flavor
+﻿index,flavor, extra
+1,matcha flavor,"""yum"""
+2,cookie flavor,flavor
+3,chocolate flavor,flavor
+4,vanilla flavor,
+5,cherry flavor,
+6,flavor,"""huh?"""
